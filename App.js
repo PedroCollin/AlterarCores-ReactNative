@@ -6,18 +6,20 @@ import {
   Image,
   StyleSheet,
   SafeAreaView,
-  ImageBackground,
+  Button,
+  Alert,
+ // ImageBackground,
 } from 'react-native';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         style={{flex: 1}}
         source={{
           uri:
             'https://saopaulofc.com.br/wp-content/uploads/2020/11/luciano-1.jpg',
-        }}>
+        }}> */}
         <View style={styles.container}>
           <Text style={styles.title}>
              THE BOYS OF BOSCH
@@ -28,18 +30,26 @@ const App = () => {
                 uri:
                   'https://media4.giphy.com/media/9oHZQ2gEez8ti/giphy.gif',
               }}
+              
               style={{
                 width: 60,
                 height: 60,
-                marginTop: 100
+                marginTop: 100,
               }}
+
             />
+            
             <Text style={styles.textStyle}>
               REACT É O BRAIA
             </Text>
           </View>
         </View>
-      </ImageBackground>
+      {/* </ImageBackground> */}
+      <Button
+        title="Alterar Cor"
+        onPress={() => Alert.alert('Cor alterada')}
+        onClick={(event) => onClick(id, acao, color)}      
+          />
     </SafeAreaView>
   );
 };
@@ -64,3 +74,7 @@ const styles = StyleSheet.create({
     padding: 10,
   }
 });
+
+function Click(id: string)
+
+
