@@ -36,7 +36,6 @@ const App = () => {
                 height: 60,
                 marginTop: 100,
               }}
-
             />
             
             <Text style={styles.textStyle}>
@@ -75,6 +74,6 @@ const styles = StyleSheet.create({
   }
 });
 
-function Click(id: string)
+//function Click(id: string)
 
 
