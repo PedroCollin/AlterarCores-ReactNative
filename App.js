@@ -1,42 +1,50 @@
-import React, { useState } from "react";
-const colors = ["red", "green", "blue", "yellow"];
-export default function App() {
-  const [backgroundColor, setBackgroundColor] = useState("");
-return (
-    <div
-      className="App"
-      style={{
-        backgroundColor
-      }}
-    >
-      <style>
-        {`
-        .circle {
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          border: 1px solid black;
-          display: inline-block;
-          cursor: pointer;
-        }
-#screen {
-          width: 100vw;
-          height: 100vh;
-        }
-      `}
-      </style>
-      {colors.map((c) => {
+import React, { Component } from "react";
+import { View, StatusBar, Text, Button } from "react-native";
+
+export default class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { estiloBar: "default", corFundo:'white' }
+        this.fundoVermelho = this.fundoVermelho.bind(this);
+        this.fundoAmarelo = this.fundoAmarelo.bind(this);
+        this.fundoVerde = this.fundoVerde.bind(this);
+        this.fundoAzul = this.fundoAzul.bind(this);
+    }
+
+    fundoVermelho() {
+        let aux = this.state;
+        aux.corFundo='red'
+        this.setState(aux);
+    }
+
+    fundoAmarelo() {
+        let aux = this.state;
+        aux.corFundo='yellow'
+        this.setState(aux);
+    }
+
+    fundoVerde() {
+      let aux = this.state;
+      aux.corFundo='green'
+      this.setState(aux);
+  }
+
+  fundoAzul() {
+    let aux = this.state;
+    aux.corFundo='blue'
+    this.setState(aux);
+}
+
+    render() {
         return (
-          <div
-            key={c}
-            style={{
-              backgroundColor: c
-            }}
-            class="circle"
-            onClick={() => setBackgroundColor(c)}
-          ></div>
+            <View style={{backgroundColor:this.state.corFundo,flex:1}}>
+                <Text>Alterar Cores</Text>
+                <Button title='Fundo Vermelho' onPress={this.fundoVermelho} />
+                <Button title='Fundo Amarelo' onPress={this.fundoAmarelo} />
+                <Button title='Fundo Verde' onPress={this.fundoVerde} />
+                <Button title='Fundo Azul' onPress={this.fundoAzul} />
+            </View>
         );
-      })}
-    </div>
-  );
+    }
 }
