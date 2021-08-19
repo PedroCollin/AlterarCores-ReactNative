@@ -14,12 +14,12 @@ import {
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <ImageBackground
+      <ImageBackground
         style={{flex: 1}}
         source={{
           uri:
             'https://saopaulofc.com.br/wp-content/uploads/2020/11/luciano-1.jpg',
-        }}> */}
+        }}>
         <View style={styles.container}>
           <Text style={styles.title}>
              THE BOYS OF BOSCH
@@ -43,7 +43,7 @@ const App = () => {
             </Text>
           </View>
         </View>
-      {/* </ImageBackground> */}
+       </ImageBackground> 
       <Button
         title="Alterar Cor"
         onPress={() => Alert.alert('Cor alterada')}
