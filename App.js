@@ -40,7 +40,7 @@ export default class App extends Component {
         return (
             <View style={{backgroundColor:this.state.corFundo,flex:1}}>
                 <Text>Alterar Cores</Text>
-                <Button title='Fundo Vermelho' onPress={this.fundoVermelho} />
+                <Button title='Fundo Vermelho' onPress={this.fundoVermelho} />              
                 <Button title='Fundo Amarelo' onPress={this.fundoAmarelo} />
                 <Button title='Fundo Verde' onPress={this.fundoVerde} />
                 <Button title='Fundo Azul' onPress={this.fundoAzul} />
