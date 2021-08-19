@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View,Text, Button , StatusBar, SafeAreaView,  StyleSheet} from "react-native";
+
+
 
 export default class App extends Component {
 
@@ -35,16 +37,24 @@ export default class App extends Component {
     aux.corFundo='blue'
     this.setState(aux);
 }
-
+    
     render() {
         return (
-            <View style={{backgroundColor:this.state.corFundo,flex:1}}>
+            <SafeAreaView style={{backgroundColor:this.state.corFundo,flex:1}}>
+            <StatusBar backgroundColor="white" barStyle="dark-content"/>
+            <View>
+                
+                
                 <Text>Alterar Cores</Text>
-                <Button title='Fundo Vermelho' onPress={this.fundoVermelho} />              
-                <Button title='Fundo Amarelo' onPress={this.fundoAmarelo} />
-                <Button title='Fundo Verde' onPress={this.fundoVerde} />
-                <Button title='Fundo Azul' onPress={this.fundoAzul} />
-            </View>
+                <Button title='Fundo Vermelho' color="red" onPress={this.fundoVermelho} />              
+                <Button title='Fundo Amarelo' color="yellow" onPress={this.fundoAmarelo} />
+                <Button title='Fundo Verde' color="green" onPress={this.fundoVerde} />
+                <Button title='Fundo Azul' color="blue" onPress={this.fundoAzul} />
+                
+            </View>   
+            </SafeAreaView>
         );
     }
+
 }
+
